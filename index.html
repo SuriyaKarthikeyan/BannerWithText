@@ -1,109 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Responsive Product Slider </title>
+  <title>Responsive Banner</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style type="text/css">
-.container {
-  background: black;
-}
-/* Basic styling for the product slider */
-.product-slider {
+  <style type="text/css">
+    /* body {
+  margin: 0;
+  padding: 0;
+} */
+
+.banner {
+  position: relative;
   width: 100%;
+  height: 300px; /* Adjust height as needed */
+  background-image: url('car_banner.png'); /* Replace 'your-image.jpg' with the path to your image */
+  background-size: cover;
+  background-position: center;
 }
 
-.product-item {
-  text-align: center;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 15px;
-  /* Dont add width here. It will affect responsive */
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  
+  color: #000;
+  /* color: #fff; */
 }
 
-.product-item img {
-  max-width: 100%;
-  height: auto;
-  }
+.banner-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
 
-  .slick-prev {
-    left: -10px !important;
-  }
-  .slick-next {
-    right: -10px !important;
-  }
-  h3, p {
-    color: #fff;
-  }
+.banner-text p {
+  font-size: 1.2em;
+}
 
-    </style>
+@media only screen and (max-width: 1199px) {
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+    /* color: #000; */
+  
+    
+  }
+}
+@media only screen and (max-width: 991px) {
+  .banner {
+    height: 160px;
+  }
+  .banner-text {
+    position: absolute;
+    top: 25%;
+    left: 15px;
+    transform: none;
+  }
+  .banner-text h1 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .banner-text p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  .banner {
+    height: 100px;
+  }
+  .banner-text {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    transform: none;
+  }
+  .banner-text h1 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .banner-text p {
+    font-size: 10px;
+  }
+}
+
+  </style>
 </head>
 <body>
   <div class="container">
-    <div class="product-slider">
-        <div class="product-item">
-          <img src="product-1.jpg" alt="Product 1">
-          <h3>Product 1</h3>
-          <p>Description of Product 1</p>
-        </div>
-        <div class="product-item">
-          <img src="product-2.jpg" alt="Product 2">
-          <h3>Product 2</h3>
-          <p>Description of Product 2</p>
-        </div>
-        <div class="product-item">
-            <img src="product-3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3</p>
-          </div>
-          <div class="product-item">
-            <img src="product-4.jpg" alt="Product 4">
-            <h3>Product 4</h3>
-            <p>Description of Product 4</p>
-          </div>
-          <div class="product-item">
-            <img src="product-4.jpg" alt="Product 5">
-            <h3>Product 5</h3>
-            <p>Description of Product 5</p>
-          </div>
-        <!-- Add more product items here -->
-      </div>
-      </div> <!-- container -->
-     <!-- Include jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Include Slick slider library -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<script>
-  $(document).ready(function(){
-    $('.product-slider').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 2000,
-      arrows: true,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1
-          }
-        }
-      ]
-    });
-  });
-</script>
- 
+  <div class="banner">
+    <div class="banner-text">
+      <h1>Welcome to Our Website</h1>
+      <p>This is some sample text describing your website.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
